@@ -51,7 +51,7 @@ func main() {
 
 	if listOnly {
 		for _, node := range nodes.Items {
-			price := node.Metadata.Annotations["hightower.com/cost"]
+			price := node.Metadata.Annotations["custom-scheduler.com/cost"]
 			fmt.Printf("%s %s\n", node.Metadata.Name, price)
 		}
 		os.Exit(0)
@@ -61,7 +61,7 @@ func main() {
 	for _, node := range nodes.Items {
 		price := prices[rand.Intn(len(prices))]
 		annotations := map[string]string{
-			"hightower.com/cost": price,
+			"custom-scheduler.com/cost": price,
 		}
 		patch := Node{
 			Metadata{

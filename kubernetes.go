@@ -304,7 +304,7 @@ func fit(pod *Pod) ([]Node, error) {
 			LastTimestamp:  timestamp,
 			FirstTimestamp: timestamp,
 			Type:           "Warning",
-			Source:         EventSource{Component: "hightower-scheduler"},
+			Source:         EventSource{Component: "custom-scheduler"},
 			InvolvedObject: ObjectReference{
 				Kind:      "Pod",
 				Name:      pod.Metadata.Name,
@@ -370,7 +370,7 @@ func bind(pod *Pod, node Node) error {
 		LastTimestamp:  timestamp,
 		FirstTimestamp: timestamp,
 		Type:           "Normal",
-		Source:         EventSource{Component: "hightower-scheduler"},
+		Source:         EventSource{Component: "custom-scheduler"},
 		InvolvedObject: ObjectReference{
 			Kind:      "Pod",
 			Name:      pod.Metadata.Name,

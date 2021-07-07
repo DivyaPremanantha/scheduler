@@ -25,7 +25,7 @@ func bestPrice(nodes []Node) (Node, error) {
 
 	var bestNodePrice *NodePrice
 	for _, n := range nodes {
-		price, ok := n.Metadata.Annotations["hightower.com/cost"]
+		price, ok := n.Metadata.Annotations["custom-scheduler.com/cost"]
 		if !ok {
 			continue
 		}

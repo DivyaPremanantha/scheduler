@@ -21,7 +21,7 @@ import (
 	"syscall"
 )
 
-const schedulerName = "hightower"
+const schedulerName = "custom-scheduler.com"
 
 func main() {
 	log.Println("Starting custom scheduler...")

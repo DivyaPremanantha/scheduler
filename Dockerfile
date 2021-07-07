@@ -1,4 +1,6 @@
-FROM scratch
-MAINTAINER Kelsey Hightower <kelsey.hightower@gmail.com>
-ADD scheduler /scheduler
-ENTRYPOINT ["/scheduler"]
+FROM golang:latest
+RUN mkdir /scheduler
+ADD . /scheduler
+WORKDIR /scheduler
+RUN go build -o build .
+ENTRYPOINT ["/scheduler/build"]
